@@ -11,3 +11,4 @@ export const greenButtonStyles =
 export const copyStyle =
   "text-blue-500 text-basic self-end cursor-pointer hover:text-blue-70";
 export const buttonIconStyle = "mr-2 text-[16px]  inline";
+export const leadContainerStyle = "flex flex-row justify-between w-[1220px]";

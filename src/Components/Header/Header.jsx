@@ -11,6 +11,7 @@ import {
   mainNavbarStyle,
   leadTypeStyle,
   copyStyle,
+  leadContainerStyle,
 } from "./HeadersStyles";
 
 const Header = () => {
@@ -37,7 +38,7 @@ const Header = () => {
 
   const leadDetails = () => {
     return (
-      <div className="flex flex-row justify-between w-[1220px]">
+      <div className={leadContainerStyle}>
         <div className="flex flex-row gap-4 items-center">
           <div
             className={`${profileCircleStyle}`}
