@@ -13,6 +13,7 @@ import {
   detailsUlStyle,
   detailsIconStyle,
   activeStyle,
+  width,
 } from "./TabBarStyles";
 import {
   navigateLead,
@@ -21,7 +22,6 @@ import {
   navigateDoc,
   navigateCall,
   navigateHistory,
-  width,
 } from "../../Constants";
 
 const TabBar = () => {
