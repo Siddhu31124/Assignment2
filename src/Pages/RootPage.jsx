@@ -3,6 +3,8 @@ import { Outlet } from "react-router";
 import Header from "../Components/Header/Header";
 import SideBar from "../Components/SideBarSection/Sidebar";
 import TabBar from "../Components/TabBar/TabBar";
+
+//TODO: Check the syntac w-[100]
 const RootPage = () => {
   return (
     <div className="flex flex-col">

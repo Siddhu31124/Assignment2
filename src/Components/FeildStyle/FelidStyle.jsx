@@ -16,6 +16,10 @@ import {
   IDENTIFY_URL,
 } from "../../Constants";
 
+//Remove sidebar as prop
+//TODO: Updathe Field spelling
+//rename the component as Field
+//Remove li or rename the component as list item context
 const FelidStyles = ({ type, value, sidebar }) => {
   const customStyles = sidebar
     ? `${commonFelidStyle} text-right`
@@ -43,7 +47,8 @@ const FelidStyles = ({ type, value, sidebar }) => {
       }
       return <li className={customStyles}>{value}</li>;
     }
-
+    //Move the long text as seperate case
+    //Handle truncate cases to all the field types
     case FILED_LONG_TEXT:
     case FILED_DROPDOWN:
     case FILED_NUMBER: {
@@ -56,6 +61,8 @@ const FelidStyles = ({ type, value, sidebar }) => {
       );
     }
 
+    //Handle the no data cases
+    //No magic numbers
     case FILED_MULTI_SELECT: {
       return (
         <li className={customStyles}>
@@ -65,6 +72,7 @@ const FelidStyles = ({ type, value, sidebar }) => {
       );
     }
 
+    //Handle the null case
     case FILED_CHECKBOX_GROUP: {
       if (value.length > 0) {
         return <li className={customStyles}>{value.join(" ,")}</li>;
