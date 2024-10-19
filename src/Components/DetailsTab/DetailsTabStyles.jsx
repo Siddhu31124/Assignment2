@@ -3,4 +3,4 @@ export const detailsUlStyle = "flex flex-row gap-5 items-center ";
 export const detailsLiStyle = "text-basic font-medium text-[#667085]";
 export const detailsIconStyle = "mr-2 inline text-[20px]";
 export const activeStyle =
-  "text-[#175DC3] font-semibold p-3 border-b-2 border-b-blue-500";
+  "text-[#175DC3] font-medium p-3 border-b-2 border-b-blue-500";

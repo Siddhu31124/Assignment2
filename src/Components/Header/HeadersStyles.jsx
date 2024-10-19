@@ -10,3 +10,4 @@ export const greenButtonStyles =
   "bg-green-50 text-green-600 px-2 py-2 text-basic rounded-xl hover:bg-green-100";
 export const copyStyle =
   "text-blue-500 text-basic self-end cursor-pointer hover:text-blue-70";
+export const buttonIconStyle = "mr-2 text-[16px]  inline";

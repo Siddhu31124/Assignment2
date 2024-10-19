@@ -6,9 +6,9 @@ import DetailsTab from "../Components/DetailsTab/DetailsTab";
 
 const RootPage = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-screen">
       <Header />
-      <div className="flex flex-row bg-slate-100 w-[100] h-screen">
+      <div className="flex flex-row bg-slate-100 w-[100]">
         <SideBar />
         <div>
           <DetailsTab />

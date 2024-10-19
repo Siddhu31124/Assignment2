@@ -2,88 +2,82 @@ import dayjs from "dayjs";
 import { IoCallOutline } from "react-icons/io5";
 import { DATE_FORMAT } from "../../Constants";
 
-const FelidStyles = ({ type, value }) => {
+import { commonFelidStyle, linkStyle, phoneNumberStyle } from "./Styles";
+import {
+  FILED_CHECKBOX_GROUP,
+  FILED_DATE,
+  FILED_DROPDOWN,
+  FILED_EMAIL,
+  FILED_LONG_TEXT,
+  FILED_MULTI_SELECT,
+  FILED_NUMBER,
+  FILED_PHONE,
+  FILED_SMALL_TEXT,
+  IDENTIFY_URL,
+} from "../../Constants";
+
+const FelidStyles = ({ type, value, sidebar }) => {
+  const multiSelectStyle = sidebar
+    ? `${commonFelidStyle} text-right`
+    : commonFelidStyle;
   switch (type) {
-    case "EMAIL": {
-      return (
-        <li className="text-[#1D2039]  text-basic font-medium">{value}</li>
-      );
+    case FILED_EMAIL: {
+      return <li className={commonFelidStyle}>{value}</li>;
     }
 
-    case "PHONE_NUMBER": {
+    case FILED_PHONE: {
       return (
-        <li className="text-blue-700 text-basic flex items-center">
+        <li className={phoneNumberStyle}>
           <IoCallOutline className="mr-1" /> {value.phoneNumber}
         </li>
       );
     }
 
-    case "SMALL_TEXT": {
-      if (value.startsWith("htt")) {
+    case FILED_SMALL_TEXT: {
+      if (value.startsWith(IDENTIFY_URL)) {
         return (
-          <a
-            className="max-w-[120px] text-blue-700 text-basic font-medium text-right truncate"
-            href={value}
-          >
+          <a className={linkStyle} href={value}>
             {value}
           </a>
         );
       }
+      return <li className={commonFelidStyle}>{value}</li>;
+    }
+
+    case FILED_LONG_TEXT:
+    case FILED_DROPDOWN:
+    case FILED_NUMBER: {
+      return <li className={`max-w-[140px] ${commonFelidStyle}`}>{value}</li>;
+    }
+
+    case FILED_DATE: {
       return (
-        <li className="max-w-[140px] text-[#1D2039] text-basic font-medium">
-          {value}
-        </li>
+        <li className={commonFelidStyle}>{dayjs(value).format(DATE_FORMAT)}</li>
       );
     }
 
-    case "LONG_TEXT":
-    case "DROPDOWN":
-    case "NUMBER": {
+    case FILED_MULTI_SELECT: {
       return (
-        <li className="max-w-[140px] text-[#1D2039] text-basic font-medium ">
-          {value}
-        </li>
-      );
-    }
-
-    case "DATE": {
-      return (
-        <li className="text-basic text-[#1D2039] font-medium">
-          {dayjs(value).format(DATE_FORMAT)}
-        </li>
-      );
-    }
-
-    case "MULTI_SELECT": {
-      return (
-        <li className="text-basic text-[#1D2039] font-medium">
+        <li className={multiSelectStyle}>
           {value[0]} {value[1]}
           {value.length - 2 > 0 ? `+${value.length - 2}` : ""}
         </li>
       );
     }
 
-    case "CHECKBOX_GROUP": {
+    case FILED_CHECKBOX_GROUP: {
       if (value.length > 0) {
         return (
-          <li className="text-basic text-[#1D2039] font-medium max-w-[120px]">
+          <li className={`max-w-[140px] ${commonFelidStyle}`}>
             {value.join(" ,")}
           </li>
         );
       }
-      return (
-        <li className="text-basic text-[#1D2039] font-medium max-w-[120px]">
-          {value}
-        </li>
-      );
+      return <li className={`max-w-[140px] ${commonFelidStyle}`}>{value}</li>;
     }
 
     default: {
-      return (
-        <li className="text-basic text-[#1D2039] font-medium max-w-[120px]">
-          {value}
-        </li>
-      );
+      return <li className={`max-w-[140px] ${commonFelidStyle}`}>{value}</li>;
     }
   }
 };

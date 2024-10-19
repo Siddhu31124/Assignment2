@@ -2,27 +2,44 @@ import { TfiWrite } from "react-icons/tfi";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoCall } from "react-icons/io5";
 import { IoIosSend } from "react-icons/io";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
-import { blueButtonStyles, greenButtonStyles } from "./HeadersStyles";
+import {
+  blueButtonStyles,
+  greenButtonStyles,
+  buttonIconStyle,
+} from "./HeadersStyles";
+
+function handelToast(type) {
+  toast.success(`Lead Has Selected ${type}`);
+}
 
 const HeaderButtons = () => {
   return (
     <div className="flex flex-row gap-4 items-center">
-      <button className={blueButtonStyles}>
-        <IoCall className="mr-2 text-[16px]  inline" />
+      <button className={blueButtonStyles} onClick={() => handelToast("Call")}>
+        <IoCall className={buttonIconStyle} />
         Call
       </button>
-      <button className={greenButtonStyles}>
-        <IoLogoWhatsapp className="mr-2 text-[16px]  inline" />
+
+      <button
+        className={greenButtonStyles}
+        onClick={() => handelToast("Whatsapp")}
+      >
+        <IoLogoWhatsapp className={buttonIconStyle} />
         Whatsapp
       </button>
-      <button className={blueButtonStyles}>
-        <TfiWrite className="mr-2 text-[16px]  inline" />
+
+      <button
+        className={blueButtonStyles}
+        onClick={() => handelToast("Remark")}
+      >
+        <TfiWrite className={buttonIconStyle} />
         Remarks
       </button>
-      <button className={blueButtonStyles}>
-        <IoIosSend className="mr-2 text-[16px]  inline" />
+
+      <button className={blueButtonStyles} onClick={() => handelToast("Send")}>
+        <IoIosSend className={buttonIconStyle} />
         Send
       </button>
     </div>

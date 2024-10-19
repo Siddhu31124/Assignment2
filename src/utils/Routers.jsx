@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import RootPage from "../Pages/RootPage";
 import OtherPage from "../Pages/OtherPages";
-import LeadDetails from "../Components/LeadDetails/LeadDetails";
+import TabDetails from "../Components/TabDetails/TabDetails";
 
 import {
   LEAD_DETAILS_PATH,
@@ -19,7 +19,7 @@ const Router = () => {
       path: LEAD_DETAILS_PATH,
       element: <RootPage />,
       children: [
-        { index: true, element: <LeadDetails /> },
+        { index: true, element: <TabDetails /> },
         { path: ACTIVITIES_PATH, element: <OtherPage /> },
         { path: REMARK_PATH, element: <OtherPage /> },
         { path: DOCS_PATH, element: <OtherPage /> },

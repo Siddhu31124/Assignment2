@@ -14,19 +14,34 @@ import {
 const Overview = () => {
   const [isShowMore, setIsShowMore] = useState(true);
   const { overviewFields } = data;
+  const topThreeData = overviewFields.slice(0, 4);
   function handelShowMore() {
     setIsShowMore((preVal) => !preVal);
   }
-
   const showMore = () => {
     if (isShowMore) {
       return (
-        <li onClick={handelShowMore} className={showMoreStyles}>
-          See more
-          <IoIosArrowDown className={arrowStyles} />
-        </li>
+        <>
+          {topThreeData.map((overviewDetails) => (
+            <li
+              key={overviewDetails.fieldId}
+              className="flex flex-row justify-between"
+            >
+              <p className={contentTypeStyles}>{overviewDetails.name}</p>
+              <FelidStyles
+                type={overviewDetails.fieldType}
+                value={overviewDetails.value}
+              />
+            </li>
+          ))}
+          <li onClick={handelShowMore} className={showMoreStyles}>
+            See more
+            <IoIosArrowDown className={arrowStyles} />
+          </li>
+        </>
       );
     }
+
     return (
       <>
         {overviewFields.map((overviewDetails) => (
@@ -38,6 +53,7 @@ const Overview = () => {
             <FelidStyles
               type={overviewDetails.fieldType}
               value={overviewDetails.value}
+              sidebar
             />
           </li>
         ))}
@@ -50,7 +66,7 @@ const Overview = () => {
   };
 
   return (
-    <ul className={`${assignOverviewContainer} max-w-[500px] overflow-y-auto `}>
+    <ul className={`${assignOverviewContainer} max-h-[300px] overflow-y-auto `}>
       <li className="flex flex-row ">
         <p className="text-[#344054] text-head">Overview</p>
       </li>

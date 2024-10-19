@@ -11,3 +11,8 @@ export const showMoreStyles =
 export const arrowStyles = "inline text-black text-[16px] ml-1 font-light";
 export const assignOverviewContainer =
   "w-[360px] p-4 rounded-2xl bg-white flex flex-col gap-4";
+export const assignUlContainer =
+  "w-[360px] p-4 rounded-2xl bg-white flex flex-col gap-4";
+export const assignLiContainer = "flex flex-row justify-between items-center";
+export const pinIconStyle = "font-medium text-[#475467] text-[16px]";
+export const pinTextStyle = "font-medium text-[#667085] text-[16px]";

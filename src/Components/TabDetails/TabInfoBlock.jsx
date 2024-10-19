@@ -3,8 +3,15 @@ import FelidStyles from "../../utils/FeildStyle/FelidStyle";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+import {
+  blueIndicatorStyle,
+  typeInfoStyle,
+  infoBlockStyle,
+  typeOfInfoStyle,
+  fieldDetailsListStyle,
+} from "./TabDetailsStyle";
 
-const LeadInfoBlock = ({ name, fieldType }) => {
+const TabInfoBlock = ({ name, fieldType }) => {
   const [isShowMore, setIsShowMore] = useState(false);
 
   function handelShowMore() {
@@ -14,9 +21,9 @@ const LeadInfoBlock = ({ name, fieldType }) => {
   const closeMoreDetails = () => {
     if (!isShowMore) {
       return (
-        <div className="w-[746px] h-[56px] bg-white rounded-2xl flex flex-row justify-between items-center ">
+        <div className={typeInfoStyle}>
           <div className="flex flex-row gap-3">
-            <div className="h-24px w-[4px] bg-blue-700 rounded-r-3xl "></div>
+            <div className={blueIndicatorStyle}></div>
             <p className="text-basic">{name}</p>
           </div>
           <p onClick={handelShowMore}>
@@ -30,10 +37,10 @@ const LeadInfoBlock = ({ name, fieldType }) => {
   const openMoreDetails = () => {
     if (isShowMore) {
       return (
-        <div className="w-[746px]  bg-white rounded-2xl pt-4 ">
-          <div className=" flex flex-row justify-between items-center ">
+        <div className={infoBlockStyle}>
+          <div className={typeOfInfoStyle}>
             <div className="flex flex-row gap-3">
-              <div className="h-24px w-[4px] bg-blue-700 rounded-r-3xl "></div>
+              <div className={blueIndicatorStyle}></div>
               <p className="text-basic">{name}</p>
             </div>
             <p onClick={handelShowMore}>
@@ -42,7 +49,7 @@ const LeadInfoBlock = ({ name, fieldType }) => {
           </div>
           <ul className="pb-4 px-4 flex flex-row flex-wrap">
             {fieldType.map((fieldDetails) => (
-              <li className="w-[196px] flex flex-col gap-1 pl-5 p-3 border-r-2 border-r-[#b6b8bc9e] last:border-none">
+              <li className={fieldDetailsListStyle}>
                 <p className="text-basic text-[#667085]">{fieldDetails.name}</p>
                 <FelidStyles
                   type={fieldDetails.fieldType}
@@ -59,8 +66,10 @@ const LeadInfoBlock = ({ name, fieldType }) => {
 
   return (
     <>
-      {closeMoreDetails()} {openMoreDetails()}
+      {closeMoreDetails()}
+
+      {openMoreDetails()}
     </>
   );
 };
-export default LeadInfoBlock;
+export default TabInfoBlock;

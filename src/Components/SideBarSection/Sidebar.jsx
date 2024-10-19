@@ -7,6 +7,8 @@ import {
   containerStyles,
   contentTypeStyles,
   contentDetailsStyles,
+  pinIconStyle,
+  pinTextStyle,
 } from "./SidebarStyles";
 
 const Sidebar = () => {
@@ -14,8 +16,8 @@ const Sidebar = () => {
     return (
       <div className={containerStyles}>
         <p className="flex gap-2 items-center">
-          <MdOutlinePushPin className="font-medium text-[#475467] text-[16px]" />
-          <span className="font-medium text-[#667085] text-[16px]">Pinned</span>
+          <MdOutlinePushPin className={pinIconStyle} />
+          <span className={pinTextStyle}>Pinned</span>
         </p>
         <div className="toggle-switch">
           <input type="checkbox" id="toggle" className="toggle-input" />

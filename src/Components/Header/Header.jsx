@@ -2,8 +2,9 @@ import { BsFillRocketTakeoffFill } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa6";
 import { LuRefreshCcw } from "react-icons/lu";
 import { RxCross2 } from "react-icons/rx";
-import data from "../../Sample1.json";
 import { RiLink } from "react-icons/ri";
+
+import data from "../../Sample1.json";
 import HeaderButtons from "./HeaderButtons";
 import {
   profileCircleStyle,
@@ -17,9 +18,7 @@ const Header = () => {
 
   function extractInitials(name) {
     let words = name.split(" ");
-
     let initials = words.map((word) => word[0]).join("");
-
     return initials.toUpperCase();
   }
 
