@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { IoCallOutline } from "react-icons/io5";
-import { DATE_FORMAT } from "../../Constants";
+import { DATE_FORMAT } from "../../../Constants";
 
 import { commonFelidStyle, linkStyle, phoneNumberStyle } from "./Styles";
 import {
@@ -14,7 +14,7 @@ import {
   FILED_PHONE,
   FILED_SMALL_TEXT,
   IDENTIFY_URL,
-} from "../../Constants";
+} from "../../../Constants";
 
 const FelidStyles = ({ type, value, sidebar }) => {
   const multiSelectStyle = sidebar
@@ -77,7 +77,11 @@ const FelidStyles = ({ type, value, sidebar }) => {
     }
 
     default: {
-      return <li className={`max-w-[140px] ${commonFelidStyle}`}>{value}</li>;
+      return (
+        <li className={`max-w-[140px] ${commonFelidStyle}`}>
+          {value ? value : "Not Data"}
+        </li>
+      );
     }
   }
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FelidStyles from "../../utils/FeildStyle/FelidStyle";
+import FelidStyles from "../SideBarSection/FeildStyle/FelidStyle";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";

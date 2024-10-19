@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FelidStyles from "../../utils/FeildStyle/FelidStyle";
+import FelidStyles from "./FeildStyle/FelidStyle";
 
 import data from "../../Sample1.json";
 import { IoIosArrowDown } from "react-icons/io";
@@ -14,7 +14,7 @@ import {
 const Overview = () => {
   const [isShowMore, setIsShowMore] = useState(true);
   const { overviewFields } = data;
-  const topThreeData = overviewFields.slice(0, 4);
+  const topThreeData = overviewFields.slice(0, 3);
   function handelShowMore() {
     setIsShowMore((preVal) => !preVal);
   }
@@ -66,7 +66,7 @@ const Overview = () => {
   };
 
   return (
-    <ul className={`${assignOverviewContainer} max-h-[300px] overflow-y-auto `}>
+    <ul className={`${assignOverviewContainer} max-h-[240px] overflow-y-auto `}>
       <li className="flex flex-row ">
         <p className="text-[#344054] text-head">Overview</p>
       </li>
