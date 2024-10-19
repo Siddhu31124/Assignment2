@@ -6,3 +6,5 @@ export const leadDataBlockStyle =
   "bg-white w-[340px] h-[250px] shadow-md rounded-lg p-6 m-4  max-w-sm leadContainer";
 export const leadNameStyle =
   "text-2xl font-semibold text-gray-800 mb-2 flex flex-row items-center gap-4";
+export const homeMainContainer = "px-40 py-6 flex flex-row flex-wrap gap-8";
+export const commonTypeName = "font-bold text-slate-700";

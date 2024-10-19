@@ -16,3 +16,4 @@ export const assignUlContainer =
 export const assignLiContainer = "flex flex-row justify-between items-center";
 export const pinIconStyle = "font-medium text-[#475467] text-[16px]";
 export const pinTextStyle = "font-medium text-[#667085] text-[16px]";
+export const betweenStyle = "flex flex-row justify-between";

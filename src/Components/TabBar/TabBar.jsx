@@ -5,6 +5,7 @@ import { TfiWrite } from "react-icons/tfi";
 import { IoDocumentText } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
 import { GoHistory } from "react-icons/go";
+import { useParams } from "react-router-dom";
 
 import {
   detailsLiStyle,
@@ -14,53 +15,56 @@ import {
   activeStyle,
 } from "./TabBarStyles";
 import {
-  LEAD_DETAILS_PATH,
-  ACTIVITIES_PATH,
-  REMARK_PATH,
-  DOCS_PATH,
-  CALL_LOG_PATH,
-  HISTORY_PATH,
+  navigateLead,
+  navigateActivities,
+  navigateRemark,
+  navigateDoc,
+  navigateCall,
+  navigateHistory,
+  width,
 } from "../../Constants";
 
 const TabBar = () => {
+  const { leadId } = useParams();
+
   const isActivePathStyle = ({ isActive }) =>
     isActive ? activeStyle : detailsLiStyle;
 
   const navElements = () => {
     return (
       <ul className={detailsUlStyle}>
-        <NavLink to={LEAD_DETAILS_PATH} className={isActivePathStyle}>
-          <li className="w-[120px]">
+        <NavLink to={navigateLead(leadId)} end className={isActivePathStyle}>
+          <li className={width}>
             <CgProfile className={detailsIconStyle} />
             Lead Details
           </li>
         </NavLink>
-        <NavLink to={ACTIVITIES_PATH} className={isActivePathStyle}>
-          <li className="w-[120px]">
+        <NavLink to={navigateActivities(leadId)} className={isActivePathStyle}>
+          <li className={width}>
             <BsActivity className={detailsIconStyle} />
             Activities
           </li>
         </NavLink>
-        <NavLink to={REMARK_PATH} className={isActivePathStyle}>
-          <li className="w-[120px]">
+        <NavLink to={navigateRemark(leadId)} className={isActivePathStyle}>
+          <li className={width}>
             <TfiWrite className={detailsIconStyle} />
             Remarks
           </li>
         </NavLink>
-        <NavLink to={DOCS_PATH} className={isActivePathStyle}>
-          <li className="w-[120px]">
+        <NavLink to={navigateDoc(leadId)} className={isActivePathStyle}>
+          <li className={width}>
             <IoDocumentText className={detailsIconStyle} />
             Documents
           </li>
         </NavLink>
-        <NavLink to={CALL_LOG_PATH} className={isActivePathStyle}>
-          <li className="w-[120px]">
+        <NavLink to={navigateCall(leadId)} className={isActivePathStyle}>
+          <li className={width}>
             <IoCallOutline className={detailsIconStyle} />
             Call Log
           </li>
         </NavLink>
-        <NavLink to={HISTORY_PATH} className={isActivePathStyle}>
-          <li className="w-[120px]">
+        <NavLink to={navigateHistory(leadId)} className={isActivePathStyle}>
+          <li className={width}>
             <GoHistory className={detailsIconStyle} />
             History Log
           </li>

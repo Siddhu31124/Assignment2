@@ -1,15 +1,20 @@
 import { GoPencil } from "react-icons/go";
+import { useParams } from "react-router";
 
-import data from "../../Sample1.json";
+import leadInfo from "../../LeadDetails.json";
 import {
   contentTypeStyles,
   contentDetailsStyles,
   editButtonStyle,
   assignLiContainer,
   assignUlContainer,
+  betweenStyle,
 } from "./SidebarStyles";
 
 const Assignees = () => {
+  const { leadId } = useParams();
+  const leadData = leadInfo.filter((each) => leadId === each.leadId);
+  const { assignees } = leadData[0];
   const assigneesTabHeader = () => {
     return (
       <li className={assignLiContainer}>
@@ -26,10 +31,7 @@ const Assignees = () => {
     return (
       <>
         {assignees.map((assigneesDetails) => (
-          <li
-            key={assigneesDetails.id}
-            className="flex flex-row justify-between"
-          >
+          <li key={assigneesDetails.id} className={betweenStyle}>
             <p className={contentTypeStyles}>PRE</p>
             <p className={`${contentDetailsStyles}  flex`}>
               {assigneesDetails.name}
@@ -44,7 +46,6 @@ const Assignees = () => {
     );
   };
 
-  const { assignees } = data;
   return (
     <ul className={assignUlContainer}>
       {assigneesTabHeader()}

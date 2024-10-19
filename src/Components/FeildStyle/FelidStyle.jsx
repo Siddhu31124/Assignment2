@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { IoCallOutline } from "react-icons/io5";
-import { DATE_FORMAT } from "../../Constants";
 
+import { DATE_FORMAT } from "../../Constants";
 import { commonFelidStyle, linkStyle, phoneNumberStyle } from "./Styles";
 import {
   FILED_CHECKBOX_GROUP,
@@ -17,12 +17,12 @@ import {
 } from "../../Constants";
 
 const FelidStyles = ({ type, value, sidebar }) => {
-  const sidebarSelectStyle = sidebar
+  const customStyles = sidebar
     ? `${commonFelidStyle} text-right`
     : commonFelidStyle;
   switch (type) {
     case FILED_EMAIL: {
-      return <li className={`${sidebarSelectStyle} truncate`}>{value}</li>;
+      return <li className={`${customStyles} truncate`}>{value}</li>;
     }
 
     case FILED_PHONE: {
@@ -41,13 +41,13 @@ const FelidStyles = ({ type, value, sidebar }) => {
           </a>
         );
       }
-      return <li className={`max-w-[140px] ${sidebarSelectStyle}`}>{value}</li>;
+      return <li className={customStyles}>{value}</li>;
     }
 
     case FILED_LONG_TEXT:
     case FILED_DROPDOWN:
     case FILED_NUMBER: {
-      return <li className={`max-w-[140px] ${sidebarSelectStyle}`}>{value}</li>;
+      return <li className={customStyles}>{value}</li>;
     }
 
     case FILED_DATE: {
@@ -58,7 +58,7 @@ const FelidStyles = ({ type, value, sidebar }) => {
 
     case FILED_MULTI_SELECT: {
       return (
-        <li className={`max-w-[140px] ${sidebarSelectStyle}`}>
+        <li className={customStyles}>
           {value[0]} {value[1]}
           {value.length - 2 > 0 ? `+${value.length - 2}` : ""}
         </li>
@@ -67,21 +67,13 @@ const FelidStyles = ({ type, value, sidebar }) => {
 
     case FILED_CHECKBOX_GROUP: {
       if (value.length > 0) {
-        return (
-          <li className={`max-w-[140px] ${sidebarSelectStyle}`}>
-            {value.join(" ,")}
-          </li>
-        );
+        return <li className={customStyles}>{value.join(" ,")}</li>;
       }
-      return <li className={`max-w-[140px] ${sidebarSelectStyle}`}>{value}</li>;
+      return <li className={customStyles}>{value}</li>;
     }
 
     default: {
-      return (
-        <li className={`max-w-[140px] ${sidebarSelectStyle}`}>
-          {value ? value : "Not Data"}
-        </li>
-      );
+      return <li className={customStyles}>{value ? value : "Not Data"}</li>;
     }
   }
 };

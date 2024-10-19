@@ -1,4 +1,5 @@
 import { homeNavStyle } from "./HomeStyles";
+
 const HomeHeader = () => {
   return (
     <nav className={homeNavStyle}>

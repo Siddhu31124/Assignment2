@@ -1,32 +1,36 @@
 import { useState } from "react";
-import FelidStyles from "../FeildStyle/FelidStyle";
-
-import data from "../../Sample1.json";
+import { useParams } from "react-router";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+
+import FelidStyles from "../FeildStyle/FelidStyle";
+import leadInfo from "../../LeadDetails.json";
 import {
   contentTypeStyles,
   assignOverviewContainer,
   showMoreStyles,
   arrowStyles,
+  betweenStyle,
 } from "./SidebarStyles";
 
 const Overview = () => {
   const [isShowMore, setIsShowMore] = useState(true);
-  const { overviewFields } = data;
-  const topThreeData = overviewFields.slice(0, 3);
+  const { leadId } = useParams();
+
+  const leadData = leadInfo.filter((each) => leadId === each.leadId);
+  const { overviewFields } = leadData[0];
+  const topThreeData = overviewFields.slice(0, 2);
+
   function handelShowMore() {
     setIsShowMore((preVal) => !preVal);
   }
+
   const overviewSection = () => {
     if (isShowMore) {
       return (
         <>
           {topThreeData.map((overviewDetails) => (
-            <li
-              key={overviewDetails.fieldId}
-              className="flex flex-row justify-between"
-            >
+            <li key={overviewDetails.fieldId} className={betweenStyle}>
               <p className={contentTypeStyles}>{overviewDetails.name}</p>
               <FelidStyles
                 type={overviewDetails.fieldType}
@@ -41,14 +45,10 @@ const Overview = () => {
         </>
       );
     }
-
     return (
       <>
         {overviewFields.map((overviewDetails) => (
-          <li
-            key={overviewDetails.fieldId}
-            className="flex flex-row justify-between"
-          >
+          <li key={overviewDetails.fieldId} className={betweenStyle}>
             <p className={contentTypeStyles}>{overviewDetails.name}</p>
             <FelidStyles
               type={overviewDetails.fieldType}

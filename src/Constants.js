@@ -1,10 +1,10 @@
 export const INITIAL_PATH="/"
-export const LEAD_DETAILS_PATH = "/lead/:lead_id"
-export const ACTIVITIES_PATH = "/lead/:lead_id/activities"
-export const REMARK_PATH = "/lead/:lead_id/remark"
-export const DOCS_PATH="/lead/:lead_id/documents"
-export const CALL_LOG_PATH="/lead/:lead_id/call"
-export const HISTORY_PATH="/lead/:lead_id/history"
+export const LEAD_DETAILS_PATH = "/lead/:leadId"
+export const ACTIVITIES_PATH = "/lead/:leadId/activities"
+export const REMARK_PATH = "/lead/:leadId/remark"
+export const DOCS_PATH="/lead/:leadId/document"
+export const CALL_LOG_PATH="/lead/:leadId/call"
+export const HISTORY_PATH="/lead/:leadId/history"
 
 export const DATE_FORMAT="DD/MM/YYYY"
 
@@ -18,3 +18,27 @@ export const FILED_DATE="DATE"
 export const FILED_MULTI_SELECT="MULTI_SELECT"
 export const FILED_CHECKBOX_GROUP="CHECKBOX_GROUP"
 export const IDENTIFY_URL="http"
+
+export const TYPE_OF_INPUT='checkbox'
+export const CHECKBOX_ID="toggle"
+
+
+export const navigateLead = (leadId)=>{
+    return `/lead/${leadId}`
+}
+export const navigateActivities = (leadId)=>{
+    return `/lead/${leadId}/activities`
+}
+export const navigateRemark = (leadId)=>{
+    return `/lead/${leadId}/remark`
+}
+export const navigateDoc = (leadId)=>{
+    return `/lead/${leadId}/document`
+}
+export const navigateCall = (leadId)=>{
+    return `/lead/${leadId}/call`
+}
+export const navigateHistory = (leadId)=>{
+    return `/lead/${leadId}/history`
+}
+ 

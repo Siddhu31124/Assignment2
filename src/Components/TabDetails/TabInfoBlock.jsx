@@ -1,6 +1,6 @@
 import { useState } from "react";
-import FelidStyles from "../FeildStyle/FelidStyle";
 
+import FelidStyles from "../FeildStyle/FelidStyle";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import {
@@ -21,7 +21,7 @@ const TabInfoBlock = ({ name, fieldType }) => {
   const closeMoreDetails = () => {
     if (!isShowMore) {
       return (
-        <div className={typeInfoStyle}>
+        <div className={typeInfoStyle} onClick={handelShowMore}>
           <div className="flex flex-row gap-3">
             <div className={blueIndicatorStyle}></div>
             <p className="text-basic">{name}</p>
@@ -37,7 +37,7 @@ const TabInfoBlock = ({ name, fieldType }) => {
   const openMoreDetails = () => {
     if (isShowMore) {
       return (
-        <div className={infoBlockStyle}>
+        <div className={infoBlockStyle} onClick={handelShowMore}>
           <div className={typeOfInfoStyle}>
             <div className="flex flex-row gap-3">
               <div className={blueIndicatorStyle}></div>

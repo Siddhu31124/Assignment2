@@ -1,13 +1,14 @@
-import TabInfoBlock from "./TabInfoBlock";
-import data from "../../Sample1.json";
-import { tabTypeBorderStyle, gofsListStyle } from "./TabDetailsStyle";
 import { useParams } from "react-router";
 
+import TabInfoBlock from "./TabInfoBlock";
+import leadInfo from "../../LeadDetails.json";
+import { tabTypeBorderStyle, gofsListStyle } from "./TabDetailsStyle";
+
 const TabDetails = () => {
-  const { gofs } = data;
   const { leadId } = useParams();
 
-  console.log(leadId);
+  const leadData = leadInfo.filter((each) => leadId === each.leadId);
+  const { gofs } = leadData[0];
 
   const tabName = () => {
     return (

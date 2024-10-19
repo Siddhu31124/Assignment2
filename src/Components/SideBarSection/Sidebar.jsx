@@ -10,6 +10,7 @@ import {
   pinIconStyle,
   pinTextStyle,
 } from "./SidebarStyles";
+import { TYPE_OF_INPUT, CHECKBOX_ID } from "../../Constants";
 
 const Sidebar = () => {
   const pinnedContainer = () => {
@@ -20,8 +21,12 @@ const Sidebar = () => {
           <span className={pinTextStyle}>Pinned</span>
         </p>
         <div className="toggle-switch">
-          <input type="checkbox" id="toggle" className="toggle-input" />
-          <label htmlFor="toggle" className="toggle-label"></label>
+          <input
+            type={TYPE_OF_INPUT}
+            id={CHECKBOX_ID}
+            className="toggle-input"
+          />
+          <label htmlFor={CHECKBOX_ID} className="toggle-label"></label>
         </div>
       </div>
     );

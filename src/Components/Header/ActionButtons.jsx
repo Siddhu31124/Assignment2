@@ -8,6 +8,7 @@ import {
   blueButtonStyles,
   greenButtonStyles,
   buttonIconStyle,
+  actionContainer,
 } from "./HeadersStyles";
 
 function handelToast(type) {
@@ -16,7 +17,7 @@ function handelToast(type) {
 
 const ActionButtons = () => {
   return (
-    <div className="flex flex-row gap-4 items-center">
+    <div className={actionContainer}>
       <button className={blueButtonStyles} onClick={() => handelToast("Call")}>
         <IoCall className={buttonIconStyle} />
         Call

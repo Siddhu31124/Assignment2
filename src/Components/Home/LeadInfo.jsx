@@ -4,7 +4,9 @@ import {
   profileCircleStyle,
   leadDataBlockStyle,
   leadNameStyle,
+  commonTypeName,
 } from "./HomeStyles";
+import { navigateLead } from "../../Constants";
 
 const LeadInfo = ({ leadDetails }) => {
   function extractInitials(name) {
@@ -16,28 +18,34 @@ const LeadInfo = ({ leadDetails }) => {
     return (
       <div className={leadDataBlockStyle}>
         <h2 className={leadNameStyle}>
-          <span className={profileCircleStyle}>
-            {extractInitials(leadDetails.name)}
-          </span>
+          <div
+            className={`${profileCircleStyle}`}
+            style={{
+              backgroundColor: leadDetails.color,
+              fontSize: "24px",
+            }}
+          >
+            <p>{extractInitials(leadDetails.name)}</p>
+          </div>
           {leadDetails.name}
         </h2>
         <p className="text-gray-600 text-sm mb-4">
-          <span className="font-bold text-slate-700 ">Email: </span>
+          <span className={commonTypeName}>Email: </span>
           {leadDetails.email}
         </p>
         <p className="text-blue-600 text-sm">
-          <span className="font-bold text-slate-700">Phone: </span>
+          <span className={commonTypeName}>Phone: </span>
           {leadDetails.phone}
         </p>
         <p className="text-gray-600 text-sm">
-          <span className="font-bold text-slate-700">Company: </span>
+          <span className={commonTypeName}>Company: </span>
           {leadDetails.company}
         </p>
       </div>
     );
   };
 
-  return <Link to={`/lead/${leadDetails.leadId}`}>{leadInfoBlock()}</Link>;
+  return <Link to={navigateLead(leadDetails.leadId)}>{leadInfoBlock()}</Link>;
 };
 
 export default LeadInfo;
