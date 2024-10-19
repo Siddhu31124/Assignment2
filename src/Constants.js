@@ -1,9 +1,10 @@
-export const LEAD_DETAILS_PATH = "/"
-export const ACTIVITIES_PATH = "/activities"
-export const REMARK_PATH = "/remark"
-export const DOCS_PATH="/documents"
-export const CALL_LOG_PATH="/call"
-export const HISTORY_PATH="/history"
+export const INITIAL_PATH="/"
+export const LEAD_DETAILS_PATH = "/lead/:lead_id"
+export const ACTIVITIES_PATH = "/lead/:lead_id/activities"
+export const REMARK_PATH = "/lead/:lead_id/remark"
+export const DOCS_PATH="/lead/:lead_id/documents"
+export const CALL_LOG_PATH="/lead/:lead_id/call"
+export const HISTORY_PATH="/lead/:lead_id/history"
 
 export const DATE_FORMAT="DD/MM/YYYY"
 

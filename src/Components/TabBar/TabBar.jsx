@@ -12,7 +12,7 @@ import {
   detailsUlStyle,
   detailsIconStyle,
   activeStyle,
-} from "./DetailsTabStyles";
+} from "./TabBarStyles";
 import {
   LEAD_DETAILS_PATH,
   ACTIVITIES_PATH,
@@ -22,7 +22,7 @@ import {
   HISTORY_PATH,
 } from "../../Constants";
 
-const DetailsTab = () => {
+const TabBar = () => {
   const isActivePathStyle = ({ isActive }) =>
     isActive ? activeStyle : detailsLiStyle;
 
@@ -30,37 +30,37 @@ const DetailsTab = () => {
     return (
       <ul className={detailsUlStyle}>
         <NavLink to={LEAD_DETAILS_PATH} className={isActivePathStyle}>
-          <li>
+          <li className="w-[120px]">
             <CgProfile className={detailsIconStyle} />
             Lead Details
           </li>
         </NavLink>
         <NavLink to={ACTIVITIES_PATH} className={isActivePathStyle}>
-          <li>
+          <li className="w-[120px]">
             <BsActivity className={detailsIconStyle} />
             Activities
           </li>
         </NavLink>
         <NavLink to={REMARK_PATH} className={isActivePathStyle}>
-          <li>
+          <li className="w-[120px]">
             <TfiWrite className={detailsIconStyle} />
             Remarks
           </li>
         </NavLink>
         <NavLink to={DOCS_PATH} className={isActivePathStyle}>
-          <li>
+          <li className="w-[120px]">
             <IoDocumentText className={detailsIconStyle} />
             Documents
           </li>
         </NavLink>
         <NavLink to={CALL_LOG_PATH} className={isActivePathStyle}>
-          <li>
+          <li className="w-[120px]">
             <IoCallOutline className={detailsIconStyle} />
             Call Log
           </li>
         </NavLink>
         <NavLink to={HISTORY_PATH} className={isActivePathStyle}>
-          <li>
+          <li className="w-[120px]">
             <GoHistory className={detailsIconStyle} />
             History Log
           </li>
@@ -77,4 +77,4 @@ const DetailsTab = () => {
   );
 };
 
-export default DetailsTab;
+export default TabBar;

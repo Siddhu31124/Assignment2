@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FelidStyles from "./FeildStyle/FelidStyle";
+import FelidStyles from "../FeildStyle/FelidStyle";
 
 import data from "../../Sample1.json";
 import { IoIosArrowDown } from "react-icons/io";

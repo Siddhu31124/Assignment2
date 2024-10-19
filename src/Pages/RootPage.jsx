@@ -2,8 +2,7 @@ import { Outlet } from "react-router";
 
 import Header from "../Components/Header/Header";
 import SideBar from "../Components/SideBarSection/Sidebar";
-import DetailsTab from "../Components/DetailsTab/DetailsTab";
-
+import TabBar from "../Components/TabBar/TabBar";
 const RootPage = () => {
   return (
     <div className="flex flex-col h-screen">
@@ -11,7 +10,7 @@ const RootPage = () => {
       <div className="flex flex-row bg-slate-100 w-[100]">
         <SideBar />
         <div>
-          <DetailsTab />
+          <TabBar />
           <Outlet />
         </div>
       </div>

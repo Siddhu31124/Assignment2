@@ -60,3 +60,17 @@ hr {
 ::-webkit-scrollbar {
   display: none; 
 }
+.item{
+  width:calc(100%/3);
+}
+
+.item:nth-child(3n) {
+  border-right: none;
+}
+.leadContainer{
+  transition:all 0.3s ease;
+}
+.leadContainer:hover{
+  transform: translateY(-1rem);
+  background-color: rgb(238, 238, 238);
+}

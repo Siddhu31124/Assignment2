@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FelidStyles from "../SideBarSection/FeildStyle/FelidStyle";
+import FelidStyles from "../FeildStyle/FelidStyle";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
@@ -49,7 +49,7 @@ const TabInfoBlock = ({ name, fieldType }) => {
           </div>
           <ul className="pb-4 px-4 flex flex-row flex-wrap">
             {fieldType.map((fieldDetails) => (
-              <li className={fieldDetailsListStyle}>
+              <li className={`${fieldDetailsListStyle} item`}>
                 <p className="text-basic text-[#667085]">{fieldDetails.name}</p>
                 <FelidStyles
                   type={fieldDetails.fieldType}

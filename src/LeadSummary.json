@@ -1,0 +1,44 @@
+[
+    {
+      "leadId": "L100001",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1 5551234567",
+      "company": "Acme Corp"
+    },
+    {
+      "leadId": "L100002",
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "phone": "+1 5559876543",
+      "company": "Globex Corp"
+    },
+    {
+      "leadId": "L100003",
+      "name": "Michael Scott",
+      "email": "michael.scott@dundermifflin.com",
+      "phone": "+1 5553210987",
+      "company": "Dunder Mifflin"
+    },
+    {
+      "leadId": "L100004",
+      "name": "David Wallace",
+      "email": "david.wallace@dundermifflin.com",
+      "phone": "+1 5558765432",
+      "company": "Dunder Mifflin"
+    },
+    {
+      "leadId": "L100005",
+      "name": "Pam Beesly",
+      "email": "pam.beesly@dundermifflin.com",
+      "phone": "+1 5556543210",
+      "company": "Dunder Mifflin"
+    },
+    {
+      "leadId": "L100006",
+      "name": "Jim Halpert",
+      "email": "jim.halpert@dundermifflin.com",
+      "phone": "+1 5554321098",
+      "company": "Dunder Mifflin"
+    }
+  ]
