@@ -5,7 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 import { RiLink } from "react-icons/ri";
 
 import data from "../../Sample1.json";
-import HeaderButtons from "./HeaderButtons";
+import ActionButtons from "./ActionButtons";
 import {
   profileCircleStyle,
   mainNavbarStyle,
@@ -59,7 +59,7 @@ const Header = () => {
             <RiLink className="mr-2 text-[16px]  inline" />
             Copy
           </p>
-          <HeaderButtons />
+          <ActionButtons />
         </div>
       </div>
     );

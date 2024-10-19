@@ -18,7 +18,7 @@ const Overview = () => {
   function handelShowMore() {
     setIsShowMore((preVal) => !preVal);
   }
-  const showMore = () => {
+  const overviewSection = () => {
     if (isShowMore) {
       return (
         <>
@@ -70,7 +70,7 @@ const Overview = () => {
       <li className="flex flex-row ">
         <p className="text-[#344054] text-head">Overview</p>
       </li>
-      {showMore()}
+      {overviewSection()}
     </ul>
   );
 };

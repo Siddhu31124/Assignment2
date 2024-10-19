@@ -14,7 +14,7 @@ function handelToast(type) {
   toast.success(`Lead Has Selected ${type}`);
 }
 
-const HeaderButtons = () => {
+const ActionButtons = () => {
   return (
     <div className="flex flex-row gap-4 items-center">
       <button className={blueButtonStyles} onClick={() => handelToast("Call")}>
@@ -45,4 +45,4 @@ const HeaderButtons = () => {
     </div>
   );
 };
-export default HeaderButtons;
+export default ActionButtons;
