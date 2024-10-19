@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import Router from "./utils/Routers";
-import { Toaster } from "react-hot-toast";
 
 function App() {
   const router = Router();
