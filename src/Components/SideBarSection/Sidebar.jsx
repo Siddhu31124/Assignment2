@@ -1,7 +1,8 @@
 import { MdOutlinePushPin } from "react-icons/md";
+import { useParams } from "react-router";
 
-import Assignees from "./Assignees";
-import Overview from "./Overview";
+import AssigneesSection from "./AssigneesSection";
+import OverviewSection from "./OverviewSection";
 import {
   sidebarMainStyle,
   containerStyles,
@@ -13,6 +14,7 @@ import {
 import { TYPE_OF_INPUT, CHECKBOX_ID } from "../../Constants";
 
 const Sidebar = () => {
+  const { leadId } = useParams();
   const pinnedContainer = () => {
     return (
       <div className={containerStyles}>
@@ -45,8 +47,8 @@ const Sidebar = () => {
     <aside className={sidebarMainStyle}>
       {pinnedContainer()}
       {createdOnContainer()}
-      <Assignees />
-      <Overview />
+      <AssigneesSection leadId={leadId} />
+      <OverviewSection leadId={leadId} />
     </aside>
   );
 };

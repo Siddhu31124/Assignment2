@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FelidStyles from "../FeildStyle/FelidStyle";
+import FieldList from "../FeildStyle/FieldList";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import {
@@ -18,7 +18,7 @@ const TabInfoBlock = ({ name, fieldType }) => {
     setIsShowMore((preVal) => !preVal);
   }
 
-  const closeMoreDetails = () => {
+  const tabInfoBlockClose = () => {
     if (!isShowMore) {
       return (
         <div className={typeInfoStyle} onClick={handelShowMore}>
@@ -26,7 +26,7 @@ const TabInfoBlock = ({ name, fieldType }) => {
             <div className={blueIndicatorStyle}></div>
             <p className="text-basic">{name}</p>
           </div>
-          <p onClick={handelShowMore}>
+          <p>
             <IoIosArrowDown className="mr-6" />
           </p>
         </div>
@@ -34,7 +34,7 @@ const TabInfoBlock = ({ name, fieldType }) => {
     }
   };
 
-  const openMoreDetails = () => {
+  const tabInfoBlockOpen = () => {
     if (isShowMore) {
       return (
         <div className={infoBlockStyle} onClick={handelShowMore}>
@@ -43,7 +43,7 @@ const TabInfoBlock = ({ name, fieldType }) => {
               <div className={blueIndicatorStyle}></div>
               <p className="text-basic">{name}</p>
             </div>
-            <p onClick={handelShowMore}>
+            <p>
               <IoIosArrowUp className="mr-6" />
             </p>
           </div>
@@ -51,10 +51,10 @@ const TabInfoBlock = ({ name, fieldType }) => {
             {fieldType.map((fieldDetails) => (
               <li className={`${fieldDetailsListStyle} item`}>
                 <p className="text-basic text-[#667085]">{fieldDetails.name}</p>
-                <FelidStyles
+                <FieldList
                   type={fieldDetails.fieldType}
                   value={fieldDetails.value}
-                  infoBlock
+                  textAlignment={"text-left"}
                 />
               </li>
             ))}
@@ -66,9 +66,9 @@ const TabInfoBlock = ({ name, fieldType }) => {
 
   return (
     <>
-      {closeMoreDetails()}
+      {tabInfoBlockClose()}
 
-      {openMoreDetails()}
+      {tabInfoBlockOpen()}
     </>
   );
 };

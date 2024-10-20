@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useParams } from "react-router";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
-import FelidStyles from "../FeildStyle/FelidStyle";
-import leadInfo from "../../LeadDetails.json";
+import FieldList from "../FeildStyle/FieldList";
+import leadInfo from "../../LeadsData/LeadDetails.json";
 import {
   contentTypeStyles,
   assignOverviewContainer,
@@ -13,9 +12,8 @@ import {
   betweenStyle,
 } from "./SidebarStyles";
 
-const Overview = () => {
+const Overview = ({ leadId }) => {
   const [isShowMore, setIsShowMore] = useState(true);
-  const { leadId } = useParams();
 
   const leadData = leadInfo.filter((each) => leadId === each.leadId);
   const { overviewFields } = leadData[0];
@@ -32,9 +30,10 @@ const Overview = () => {
           {topThreeData.map((overviewDetails) => (
             <li key={overviewDetails.fieldId} className={betweenStyle}>
               <p className={contentTypeStyles}>{overviewDetails.name}</p>
-              <FelidStyles
+              <FieldList
                 type={overviewDetails.fieldType}
                 value={overviewDetails.value}
+                textAlignment={"text-right"}
               />
             </li>
           ))}
@@ -50,10 +49,10 @@ const Overview = () => {
         {overviewFields.map((overviewDetails) => (
           <li key={overviewDetails.fieldId} className={betweenStyle}>
             <p className={contentTypeStyles}>{overviewDetails.name}</p>
-            <FelidStyles
+            <FieldList
               type={overviewDetails.fieldType}
               value={overviewDetails.value}
-              sidebar
+              textAlignment={"text-right"}
             />
           </li>
         ))}

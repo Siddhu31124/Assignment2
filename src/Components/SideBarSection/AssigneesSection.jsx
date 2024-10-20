@@ -1,7 +1,6 @@
 import { GoPencil } from "react-icons/go";
-import { useParams } from "react-router";
 
-import leadInfo from "../../LeadDetails.json";
+import leadInfo from "../../LeadsData/LeadDetails.json";
 import {
   contentTypeStyles,
   contentDetailsStyles,
@@ -11,8 +10,7 @@ import {
   betweenStyle,
 } from "./SidebarStyles";
 
-const Assignees = () => {
-  const { leadId } = useParams();
+const Assignees = ({ leadId }) => {
   const leadData = leadInfo.filter((each) => leadId === each.leadId);
   const { assignees } = leadData[0];
   const assigneesTabHeader = () => {

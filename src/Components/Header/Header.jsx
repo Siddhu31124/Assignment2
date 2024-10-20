@@ -7,7 +7,7 @@ import { useParams } from "react-router";
 import { MdArrowBackIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-import leadInfo from "../../LeadDetails.json";
+import leadInfo from "../../LeadsData/LeadDetails.json";
 import ActionButtons from "./ActionButtons";
 import {
   profileCircleStyle,

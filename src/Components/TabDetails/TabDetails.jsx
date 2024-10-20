@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 
 import TabInfoBlock from "./TabInfoBlock";
-import leadInfo from "../../LeadDetails.json";
+import leadInfo from "../../LeadsData/LeadDetails.json";
 import { tabTypeBorderStyle, gofsListStyle } from "./TabDetailsStyle";
 
 const TabDetails = () => {

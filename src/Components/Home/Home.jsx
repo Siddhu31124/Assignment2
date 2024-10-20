@@ -1,4 +1,4 @@
-import leadSummary from "../../LeadSummary.json";
+import leadSummary from "../../LeadsData/LeadSummary.json";
 import HomeHeader from "./HomeHeader";
 import LeadInfo from "./LeadInfo";
 import { homeMainContainer } from "./HomeStyles";

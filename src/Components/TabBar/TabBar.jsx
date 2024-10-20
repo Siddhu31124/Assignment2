@@ -30,7 +30,7 @@ const TabBar = () => {
   const isActivePathStyle = ({ isActive }) =>
     isActive ? activeStyle : detailsLiStyle;
 
-  const navElements = () => {
+  const tabElements = () => {
     return (
       <ul className={detailsUlStyle}>
         <NavLink to={navigateLead(leadId)} end className={isActivePathStyle}>
@@ -75,7 +75,7 @@ const TabBar = () => {
 
   return (
     <nav className={detailsNavStyle}>
-      {navElements()}
+      {tabElements()}
       <hr />
     </nav>
   );
