@@ -24,6 +24,7 @@ export const TYPE_OF_INPUT='checkbox'
 export const CHECKBOX_ID="toggle"
 
 
+//Rename the below methods as getLeadDetailedViewPath, as we are not navigating in method, the name does not suit
 export const navigateLead = (leadId)=>{
     return `/lead/${leadId}`
 }

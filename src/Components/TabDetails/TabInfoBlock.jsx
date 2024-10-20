@@ -11,7 +11,9 @@ import {
   fieldDetailsListStyle,
 } from "./TabDetailsStyle";
 
+//Rename and check the pros names
 const TabInfoBlock = ({ name, fieldType }) => {
+  //rename as isExpanded
   const [isShowMore, setIsShowMore] = useState(false);
 
   function handelShowMore() {
