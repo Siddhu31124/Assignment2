@@ -25,6 +25,7 @@ import {
 } from "../../Constants";
 
 const TabBar = () => {
+  //Use the lead Id from the props
   const { leadId } = useParams();
 
   const isActivePathStyle = ({ isActive }) =>
