@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FieldList from "../FeildStyle/FieldList";
+import Field from "../Feild/Field";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import {
@@ -12,21 +12,21 @@ import {
 } from "./TabDetailsStyle";
 
 //Rename and check the pros names
-const TabInfoBlock = ({ name, fieldType }) => {
+const TabInfoBlock = ({ gofName, gofDetails }) => {
   //rename as isExpanded
-  const [isShowMore, setIsShowMore] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   function handelShowMore() {
-    setIsShowMore((preVal) => !preVal);
+    setIsExpanded((preVal) => !preVal);
   }
 
   const tabInfoBlockClose = () => {
-    if (!isShowMore) {
+    if (!isExpanded) {
       return (
         <div className={typeInfoStyle} onClick={handelShowMore}>
           <div className="flex flex-row gap-3">
             <div className={blueIndicatorStyle}></div>
-            <p className="text-basic">{name}</p>
+            <p className="text-basic">{gofName}</p>
           </div>
           <p>
             <IoIosArrowDown className="mr-6" />
@@ -37,23 +37,23 @@ const TabInfoBlock = ({ name, fieldType }) => {
   };
 
   const tabInfoBlockOpen = () => {
-    if (isShowMore) {
+    if (isExpanded) {
       return (
         <div className={infoBlockStyle} onClick={handelShowMore}>
           <div className={typeOfInfoStyle}>
             <div className="flex flex-row gap-3">
               <div className={blueIndicatorStyle}></div>
-              <p className="text-basic">{name}</p>
+              <p className="text-basic">{gofName}</p>
             </div>
             <p>
               <IoIosArrowUp className="mr-6" />
             </p>
           </div>
           <ul className="pb-4 px-4 flex flex-row flex-wrap">
-            {fieldType.map((fieldDetails) => (
+            {gofDetails.map((fieldDetails) => (
               <li className={`${fieldDetailsListStyle} item`}>
                 <p className="text-basic text-[#667085]">{fieldDetails.name}</p>
-                <FieldList
+                <Field
                   type={fieldDetails.fieldType}
                   value={fieldDetails.value}
                   textAlignment={"text-left"}

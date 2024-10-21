@@ -25,22 +25,22 @@ export const CHECKBOX_ID="toggle"
 
 
 //Rename the below methods as getLeadDetailedViewPath, as we are not navigating in method, the name does not suit
-export const navigateLead = (leadId)=>{
+export const getLeadDetailedViewPath = (leadId)=>{
     return `/lead/${leadId}`
 }
-export const navigateActivities = (leadId)=>{
+export const getLeadActivitiesViewPath = (leadId)=>{
     return `/lead/${leadId}/activities`
 }
-export const navigateRemark = (leadId)=>{
+export const getLeadRemarkViewPath = (leadId)=>{
     return `/lead/${leadId}/remark`
 }
-export const navigateDoc = (leadId)=>{
+export const getLeadDocumentViewPath = (leadId)=>{
     return `/lead/${leadId}/document`
 }
-export const navigateCall = (leadId)=>{
+export const getLeadCallViewPath = (leadId)=>{
     return `/lead/${leadId}/call`
 }
-export const navigateHistory = (leadId)=>{
+export const getLeadHistoryViewPath = (leadId)=>{
     return `/lead/${leadId}/history`
 }
  

@@ -6,8 +6,7 @@ import {
   leadNameStyle,
   commonTypeName,
 } from "./HomeStyles";
-import { navigateLead } from "../../Constants";
-
+import { getLeadDetailedViewPath } from "../../Constants";
 const LeadInfo = ({ leadDetails }) => {
   function extractInitials(name) {
     let words = name.split(" ");
@@ -45,7 +44,11 @@ const LeadInfo = ({ leadDetails }) => {
     );
   };
 
-  return <Link to={navigateLead(leadDetails.leadId)}>{leadInfoBlock()}</Link>;
+  return (
+    <Link to={getLeadDetailedViewPath(leadDetails.leadId)}>
+      {leadInfoBlock()}
+    </Link>
+  );
 };
 
 export default LeadInfo;

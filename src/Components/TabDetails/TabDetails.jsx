@@ -25,8 +25,8 @@ const TabDetails = () => {
         {gofs.map((gofsDetails) => (
           <TabInfoBlock
             key={gofsDetails.id}
-            name={gofsDetails.name}
-            fieldType={gofsDetails.fields}
+            gofName={gofsDetails.name}
+            gofDetails={gofsDetails.fields}
           />
         ))}
       </ul>

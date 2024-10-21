@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
-import FieldList from "../FeildStyle/FieldList";
+import Field from "../Feild/Field";
 import leadInfo from "../../LeadsData/LeadDetails.json";
 import {
   contentTypeStyles,
@@ -30,7 +30,7 @@ const Overview = ({ leadId }) => {
           {topThreeData.map((overviewDetails) => (
             <li key={overviewDetails.fieldId} className={betweenStyle}>
               <p className={contentTypeStyles}>{overviewDetails.name}</p>
-              <FieldList
+              <Field
                 type={overviewDetails.fieldType}
                 value={overviewDetails.value}
                 textAlignment={"text-right"}
@@ -49,7 +49,7 @@ const Overview = ({ leadId }) => {
         {overviewFields.map((overviewDetails) => (
           <li key={overviewDetails.fieldId} className={betweenStyle}>
             <p className={contentTypeStyles}>{overviewDetails.name}</p>
-            <FieldList
+            <Field
               type={overviewDetails.fieldType}
               value={overviewDetails.value}
               textAlignment={"text-right"}

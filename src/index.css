@@ -73,3 +73,15 @@ hr {
   transform: translateY(-1rem);
   background-color: rgb(238, 238, 238);
 }
+.dropAnimation{
+  animation: drop 0.8s ease;
+}
+@keyframes drop {
+  from{
+    height:10%;
+  }
+  to{
+    height:100%;
+  }
+  
+}

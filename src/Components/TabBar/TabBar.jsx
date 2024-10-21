@@ -16,55 +16,69 @@ import {
   width,
 } from "./TabBarStyles";
 import {
-  navigateLead,
-  navigateActivities,
-  navigateRemark,
-  navigateDoc,
-  navigateCall,
-  navigateHistory,
+  getLeadDetailedViewPath,
+  getLeadActivitiesViewPath,
+  getLeadRemarkViewPath,
+  getLeadDocumentViewPath,
+  getLeadCallViewPath,
+  getLeadHistoryViewPath,
 } from "../../Constants";
 
-const TabBar = () => {
+const TabBar = ({ leadId }) => {
   //Use the lead Id from the props
-  const { leadId } = useParams();
-
   const isActivePathStyle = ({ isActive }) =>
     isActive ? activeStyle : detailsLiStyle;
 
   const tabElements = () => {
     return (
       <ul className={detailsUlStyle}>
-        <NavLink to={navigateLead(leadId)} end className={isActivePathStyle}>
+        <NavLink
+          to={getLeadDetailedViewPath(leadId)}
+          end
+          className={isActivePathStyle}
+        >
           <li className={width}>
             <CgProfile className={detailsIconStyle} />
             Lead Details
           </li>
         </NavLink>
-        <NavLink to={navigateActivities(leadId)} className={isActivePathStyle}>
+        <NavLink
+          to={getLeadActivitiesViewPath(leadId)}
+          className={isActivePathStyle}
+        >
           <li className={width}>
             <BsActivity className={detailsIconStyle} />
             Activities
           </li>
         </NavLink>
-        <NavLink to={navigateRemark(leadId)} className={isActivePathStyle}>
+        <NavLink
+          to={getLeadRemarkViewPath(leadId)}
+          className={isActivePathStyle}
+        >
           <li className={width}>
             <TfiWrite className={detailsIconStyle} />
             Remarks
           </li>
         </NavLink>
-        <NavLink to={navigateDoc(leadId)} className={isActivePathStyle}>
+        <NavLink
+          to={getLeadDocumentViewPath(leadId)}
+          className={isActivePathStyle}
+        >
           <li className={width}>
             <IoDocumentText className={detailsIconStyle} />
             Documents
           </li>
         </NavLink>
-        <NavLink to={navigateCall(leadId)} className={isActivePathStyle}>
+        <NavLink to={getLeadCallViewPath(leadId)} className={isActivePathStyle}>
           <li className={width}>
             <IoCallOutline className={detailsIconStyle} />
             Call Log
           </li>
         </NavLink>
-        <NavLink to={navigateHistory(leadId)} className={isActivePathStyle}>
+        <NavLink
+          to={getLeadHistoryViewPath(leadId)}
+          className={isActivePathStyle}
+        >
           <li className={width}>
             <GoHistory className={detailsIconStyle} />
             History Log

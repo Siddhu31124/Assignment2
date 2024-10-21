@@ -27,7 +27,7 @@ import {
 //rename the component as Field
 //Remove li or rename the component as list item context
 //It is not list, rename as Field
-const FieldList = ({ type, value, textAlignment }) => {
+const Field = ({ type, value, textAlignment }) => {
   const customStyles = `${commonFelidStyle} ${textAlignment}`;
   const customMultiStyles = `${multiLineStyle} ${textAlignment}`;
   switch (type) {
@@ -106,4 +106,4 @@ const FieldList = ({ type, value, textAlignment }) => {
   }
 };
 
-export default FieldList;
+export default Field;
